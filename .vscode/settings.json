@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^npx -p @angular/cli ng new tenet-logica-guild --directory \\. --routing --style=scss --skip-git --skip-install$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
