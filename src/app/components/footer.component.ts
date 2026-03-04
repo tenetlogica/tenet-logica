@@ -2,10 +2,11 @@ import { Component, inject } from '@angular/core';
 import { SpellService } from '../services/spell.service';
 import { CommonModule } from '@angular/common';
 import { NgOptimizedImage } from '@angular/common';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-footer',
-  imports: [CommonModule, NgOptimizedImage],
+  imports: [CommonModule, NgOptimizedImage, RouterLink],
   template: `
     <footer [class]="spellService.isArcane() ? 'bg-slate-950 border-t border-purple-900/50 text-purple-200' : 'bg-slate-50 border-t border-slate-200 text-slate-600'"
             class="transition-colors duration-700 py-12">
@@ -40,9 +41,8 @@ import { NgOptimizedImage } from '@angular/common';
               {{ spellService.isArcane() ? 'Portals' : 'Company' }}
             </h3>
             <ul class="space-y-2 text-sm">
-              <li><a href="#" class="hover:underline">About</a></li>
-              <li><a href="#" class="hover:underline">Careers</a></li>
-              <li><a href="#" class="hover:underline">Blog</a></li>
+              <li><a routerLink="/about" class="hover:underline">About</a></li>
+              <li><a routerLink="/careers" class="hover:underline">Careers</a></li>
             </ul>
           </div>
 
@@ -51,8 +51,8 @@ import { NgOptimizedImage } from '@angular/common';
               {{ spellService.isArcane() ? 'Legal Wards' : 'Legal' }}
             </h3>
             <ul class="space-y-2 text-sm">
-              <li><a href="#" class="hover:underline">Privacy</a></li>
-              <li><a href="#" class="hover:underline">Terms</a></li>
+              <li><a routerLink="/privacy" class="hover:underline">Privacy</a></li>
+              <li><a routerLink="/terms" class="hover:underline">Terms</a></li>
             </ul>
           </div>
         </div>

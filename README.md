@@ -29,11 +29,12 @@ Tenet Logica is a closed guild of developers (not a company), led by Gandalf and
 - **Sub-text:** "We don't just write code; we weave logic into reality. Welcome to the Secret Agentic Software Development Guild."
 
 ## Pages
-- Home (implemented)
-- Navbar & Footer (implemented)
-- About (planned)
-- Services (planned)
-- Contact Us (planned)
+- Home
+- About
+- Services
+- Contact Us
+- Privacy
+- Terms
 
 ## Getting Started
 1. Install dependencies: `npm install`

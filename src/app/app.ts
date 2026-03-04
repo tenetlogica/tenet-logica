@@ -4,7 +4,7 @@ import { NavbarComponent } from './components/navbar.component';
 import { FooterComponent } from './components/footer.component';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-root',
   imports: [RouterOutlet, NavbarComponent, FooterComponent],
   template: `

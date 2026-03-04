@@ -41,26 +41,31 @@ import { NgOptimizedImage } from '@angular/common';
                class="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">
               {{ spellService.isArcane() ? 'Sanctum' : 'Home' }}
             </a>
-            <a href="#" 
+            <a routerLink="/about" 
+               routerLinkActive="bg-slate-100 text-slate-900"
+               [routerLinkActiveOptions]="{exact: true}" 
                [class]="spellService.isArcane() 
                  ? 'text-purple-200 hover:text-white hover:bg-purple-900/20' 
                  : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'"
                class="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">
               {{ spellService.isArcane() ? 'Grimoire' : 'About' }}
             </a>
-            <a href="#" 
+            <a routerLink="/services" 
+               routerLinkActive="bg-slate-100 text-slate-900"
+               [routerLinkActiveOptions]="{exact: true}" 
                [class]="spellService.isArcane() 
                  ? 'text-purple-200 hover:text-white hover:bg-purple-900/20' 
                  : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'"
                class="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">
-              {{ spellService.isArcane() ? 'Rituals' : 'Services' }}
+              {{ spellService.isArcane() ? 'Alchemies' : 'Services' }}
             </a>
-            <a href="#" 
+            <a routerLink="/contact" 
+               routerLinkActive="bg-blue-700 shadow-inner"
                [class]="spellService.isArcane() 
                  ? 'bg-purple-600 text-white hover:bg-purple-500 shadow-[0_0_15px_rgba(147,51,234,0.5)]' 
                  : 'bg-blue-600 text-white hover:bg-blue-700 shadow-sm'"
                class="px-4 py-2 rounded-md text-sm font-medium transition-all duration-300">
-              {{ spellService.isArcane() ? 'Summon Us' : 'Contact' }}
+              {{ spellService.isArcane() ? 'Summon Us' : 'Contact Us' }}
             </a>
           </div>
         </div>

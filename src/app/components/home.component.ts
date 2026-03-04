@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { SpellService } from '../services/spell.service';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   template: `
     <div [class]="spellService.isArcane() ? 'bg-slate-900 text-purple-100' : 'bg-white text-slate-900'" 
          class="min-h-screen transition-colors duration-1000 ease-in-out relative overflow-hidden">
@@ -21,10 +22,10 @@ import { CommonModule } from '@angular/common';
       <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         
         <!-- Hero Section -->
-        <div class="text-center mb-24 transition-all duration-1000 transform"
+        <div class="text-center mb-24 transition-colors duration-1000 transform"
              [class.scale-105]="spellService.isArcane()">
           <h1 [class]="spellService.isArcane() ? 'font-serif text-6xl tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]' : 'font-sans text-5xl font-extrabold text-slate-900 tracking-tight'"
-              class="mb-6 transition-all duration-1000">
+              class="mb-6 transition-colors duration-1000">
             {{ spellService.isArcane() ? 'Arcane Architectures' : 'Innovative Software Solutions' }}
             <br />
             <span [class]="spellService.isArcane() ? 'text-purple-300 text-4xl italic' : 'text-blue-600'">
@@ -33,30 +34,24 @@ import { CommonModule } from '@angular/common';
           </h1>
           
           <p [class]="spellService.isArcane() ? 'text-purple-200/80 font-mono text-lg max-w-2xl mx-auto border-l-4 border-purple-500 pl-6 italic' : 'text-slate-600 text-xl max-w-2xl mx-auto'"
-             class="mb-10 transition-all duration-1000">
+             class="mb-10 transition-colors duration-1000">
             {{ spellService.isArcane() 
               ? "We don't just write code; we weave logic into reality. Welcome to the Secret Agentic Software Development Guild." 
               : "Empowering your digital transformation with cutting-edge technology and expert consultancy." }}
           </p>
 
           <div class="flex justify-center gap-4">
-            <button [class]="spellService.isArcane() 
+            <a routerLink="/contact" [class]="spellService.isArcane() 
               ? 'bg-purple-700 hover:bg-purple-600 text-white shadow-[0_0_20px_rgba(147,51,234,0.6)] border border-purple-400/50' 
               : 'bg-blue-600 hover:bg-blue-700 text-white shadow-lg'"
               class="px-8 py-3 rounded-lg font-semibold transition-all duration-500 transform hover:-translate-y-1">
-              {{ spellService.isArcane() ? 'Begin the Ritual' : 'Get Started' }}
-            </button>
-            <button [class]="spellService.isArcane() 
-              ? 'bg-transparent hover:bg-purple-900/30 text-purple-300 border border-purple-500/50' 
-              : 'bg-white hover:bg-slate-50 text-slate-700 border border-slate-300'"
-              class="px-8 py-3 rounded-lg font-semibold transition-all duration-500">
-              {{ spellService.isArcane() ? 'Consult the Oracle' : 'Learn More' }}
-            </button>
+              {{ spellService.isArcane() ? 'Summon the Guild Masters' : 'Connect with Us' }}
+            </a>
           </div>
         </div>
 
         <!-- Services / Rituals Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-1000">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-colors duration-1000">
           
           <!-- Software Consulting -->
           <div [class]="spellService.isArcane() 
